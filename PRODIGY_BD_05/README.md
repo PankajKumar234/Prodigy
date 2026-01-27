@@ -12,7 +12,7 @@ Protected routes
 Owner-based permissions
 
 🏠 Room Management-
-Create, update, delete hotel rooms (owner only)
+Create, update, and delete hotel rooms (owner only)
 Public room listing
 Fetch single room details
 Duplicate room prevention
@@ -40,7 +40,7 @@ Secure password hashing
 Layer       Technology
 
 Backend     Flask
-Database    POstgreSQL
+Database    PostgreSQL
 ORM         SQLAlchemy
 Auth        Flask-JWT-Extended
 Validation  Custom Validators
@@ -84,7 +84,7 @@ PRODIGY_BD_05/
 git clone https://github.com/your-username/PRODIGY_BD_05.git
 cd PRODIGY_BD_05
 
-2️⃣ Create virtual environment
+2️⃣ Create a virtual environment
 
 python -m venv venv
 venv\Scripts\activate   # Windows
