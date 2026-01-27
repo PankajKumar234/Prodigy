@@ -1,0 +1,50 @@
+METHOD	REQUEST																			HEADERS								BODY											Expected_RESPONSE								Description
+GET		http://127.0.0.1:5000/rooms/1													None								None											{"id": 1, 										get_room(Get single room)
+																																											"title": "Updated room title", 
+																																											"Description": "Nice Room",
+																																											"price_per_night": 2500,
+																																											"location": "Banglore",
+																																											"owner_id": 1}
+															
+GET		http://127.0.0.1:5000/rooms														None								None											[{"id": 1, 										get_rooms(Get all rooms)
+																																											"location": "Goa",
+																																											"owner_id": 1,
+																																											"price_per_night": 4000.0,
+																																											"title": "Luxury Sea View Room", 
+																																											}]
+											
+DELETE	http://127.0.0.1:5000/rooms/1													Authorization: Bearer <token>		None											{"message": "Room deleted successufully"}		delete_room (Delete room only by owner)
+												
+PUT		http://127.0.0.1:5000/rooms/1													Authorization: Bearer <token>		{"price_per_night":3000							{"message": "Room updated Successfully"}		update_room (Update room only by owner)
+																						Content-Type: application/json		"location": "South Goa"}
+																					
+POST	http://127.0.0.1:5000/rooms														Authorization: Bearer <token>		{"title": "Luxury Sea View Room",				{"message": "Room created Successfully"}		create_room (create room only by owner)
+																						Content-Type: application/json		"description": "Sea-facing room with balcony",
+																															"price_per_night": 3500,
+																															"location": "Goa"}
+											
+POST	http://127.0.0.1:5000/auth/login												None								{"email": "owner@test.com",						{"access_token": "echhj34IVTY62RJH...."}		Login & Get Token (After user registration)
+																															"password": "password@12345"}
+											
+POST	http://127.0.0.1:5000/auth/register												Content-Type: application/json		(raw -> JSON)									{"message": "User registered successufully"}	User Registration
+																															{"name": "Room Owner",
+																															"email": "owner@test.com",
+																															"password": "password123"}
+											
+GET		http://127.0.0.1:5000/rooms/available?check_in=2026-02-10&check_out=2026-02-15	None								None											Shows All available rooms						TO check all available room within check-in/out
+											
+GET		http://127.0.0.1:5000/																																				{"status": "Hotel Booking API is Running"}		To check API is running
+											
+DELETE	http://127.0.0.1:5000/bookings/5												Authorization: Bearer <token>		None											{"message": "Booking cancelled successfully"}	cancel_booking(To remove booking from DB)
+
+GET		http://127.0.0.1:5000/bookings/my												Authorization: Bearer <token>														[{"booking_id": 1,								my_bookings (To get all my booking with specified owners token)
+																																											"check_in": "yyyy-mm-dd",
+																																											"check_out": "yyyy-mm-dd",
+																																											"created_at": "2026-01-25T16:40:34.898412",
+																																											"room_id": 6,
+																																											"room_title": "Single Bed Non-Ac Room"}]
+
+POST	http://127.0.0.1:5000/bookings													Authorization: Bearer <token>		{"room_id": 1,									{"message":"Booking confirmed",					create_booking(To book a room)
+																						Content-Type: application/json		"check_in": "YYYY-MM-DD",						"booking_id": 1}
+																															"check_out": "YYYY-MM-DD"}
+

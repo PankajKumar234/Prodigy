@@ -1,0 +1,16 @@
+# Ignore all environment files in all subfolders
+.env
+**/.env
+*.env
+
+# Python
+__pycache__/
+*.__pyc
+venv/
+
+# VS code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

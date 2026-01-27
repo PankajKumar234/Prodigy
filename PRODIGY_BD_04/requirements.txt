@@ -1,0 +1,7 @@
+Flask
+mongoengine
+Flask-jwt-extended
+bcrypt 
+python-dotenv
+pymongo
+redis
