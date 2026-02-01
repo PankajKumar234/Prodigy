@@ -35,8 +35,15 @@ Each task resides in its **own folder** with:
 ---
 
 ## 📁 Repository Structure
-Prodigy/ ├── PRODIGY_BD_01/ ├── PRODIGY_BD_02/ ├── PRODIGY_BD_03/ ├── PRODIGY_BD_04/ ├── PRODIGY_BD_05/ └── README.md
-Copy code
+```
+Prodigy/
+       └── PRODIGY_BD_01/
+       ├── PRODIGY_BD_02/
+       ├── PRODIGY_BD_03/
+       ├── PRODIGY_BD_04/
+       ├── PRODIGY_BD_05/
+       └── README.md
+```
 
 > ⚠️ **Note:** All `.env` files are excluded using `.gitignore` to ensure security.
 
@@ -63,18 +70,20 @@ DATABASE_URL=your_database_url
 5. Run the server:
 python app.py
 
-🔐 Security Practices Followed
+**🔐 Security Practices Followed**
 - JWT-based authentication
 - Password hashing
 - Role-based access control
 - Secure environment variable handling
 - API-level validation and error handling
 
-📄 Documentation
+**📄 Documentation**
 - Each task folder contains its own README
 - API endpoints documented with request/response samples
 - Postman collections used for testing
 
-👨‍💻 Author
+**👨‍💻 Author**
+
 Pankaj Kumar
+
 Backend Developer | Python | Flask | Databases
