@@ -51,24 +51,34 @@ Prodigy/
 
 ## ▶️ How to Run Any Task Locally
 
-1. Navigate to the task folder:
+__1.__ Navigate to the task folder:  
+```
 cd PRODIGY_BD_05
+```
 
-2. Create a virtual environment:
-python -m venv venv
+__2.__ Create a virtual environment:  
+```
+python -m venv venv  
 venv\Scripts\activate   # Windows
+```
 
-3. Install dependencies:
+__3.__ Install dependencies:  
+```
 pip install -r requirements.txt
+```
 
-4. Create .env file:
-FLASK_APP=app.py
-FLASK_ENV=development
-JWT_SECRET_KEY=your_secret_key
-DATABASE_URL=your_database_url
+__4.__ Create .env file:  
+```
+FLASK_APP=app.py  
+FLASK_ENV=development  
+JWT_SECRET_KEY=your_secret_key  
+DATABASE_URL=your_database_url  
+```
 
-5. Run the server:
+__5.__ Run the server:  
+```
 python app.py
+```
 
 **🔐 Security Practices Followed**
 - JWT-based authentication
@@ -84,6 +94,5 @@ python app.py
 
 **👨‍💻 Author**
 
-Pankaj Kumar
-
+Pankaj Kumar  
 Backend Developer | Python | Flask | Databases
