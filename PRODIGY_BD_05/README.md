@@ -192,6 +192,171 @@ DELETE  |/bookings/<room id> |Auth
 Backend Development
 Task 05: Hotel Booking Platform Backend API
 
+# 📘 API Documentation (Markdown)
+
+**🔐 Authentication**
+
+**Register User**
+
+__POST__ `/auth/register`
+
+**Request Body**
+
+```
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+**Response**
+```
+{
+  "message": "User registered successfully"
+}
+```
+
+**Login User**
+
+__POST__ `/auth/login`
+
+**Request Body**
+
+```
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+**Response**
+
+```
+{
+  "access_token": "jwt_token_here"
+}
+```
+
+**Get Logged-in User**
+
+__GET__ `/auth/me`
+
+
+**🔒 Requires JWT**
+
+**Headers**
+```
+Authorization: Bearer <JWT_TOKEN>
+```
+
+**🏠 Rooms**
+
+**Create Room**
+
+__POST__ `/rooms`
+
+**🔒 Requires JWT**
+
+**Request Body**
+
+```
+{
+  "title": "Luxury Sea View Room",
+  "description": "Near beach",
+  "price_per_night": 2500,
+  "location": "Goa"
+}
+```  
+
+
+**Get All Rooms**  
+__GET__ `/rooms`  
+🌍 Public
+
+**Get Single Room**  
+__GET__ `/rooms/{room_id}`  
+🌍 Public
+
+**Update Room**  
+__PUT__ `/rooms/{room_id}`  
+🔒 Owner only
+
+**Delete Room**  
+__DELETE__ `/rooms/{room_id}`  
+🔒 Owner only
+
+**🔎 Room Availability Search**
+
+Get Available Rooms  
+__GET__ `/rooms/available`
+
+**Query Params**  
+```
+check_in=2026-02-10
+check_out=2026-02-15
+location=Goa
+```
+
+**Response**  
+```
+[
+  {
+    "id": 1,
+    "title": "Luxury Sea View Room",
+    "price_per_night": 2500,
+    "location": "Goa"
+  }
+]
+```
+
+**📅 Bookings**  
+
+Create Booking  
+__POST__ `/bookings`  
+🔒 Requires JWT
+
+**Request Body**
+
+```
+{
+  "room_id": 1,
+  "check_in": "2026-02-10",
+  "check_out": "2026-02-15"
+}
+```
+
+**View My Bookings**  
+__GET__ `/bookings/my`  
+🔒 Requires JWT
+
+**Cancel Booking**  
+__DELETE__ `/bookings/{booking_id}`  
+🔒 Requires JWT  
+❌ Not allowed after check-in date
+
+## ⚠️ Error Responses
+|Code|	Meaning|
+|----|---------|
+400	|Bad Request
+401	|Unauthorized
+403	|Forbidden
+404	|Not Found
+409	|Conflict
+500	|Server Error  
+
+## 🧪 Testing with Postman
+
+__1.__ Login → copy JWT
+
+__2.__ Set header:
+```
+Authorization: Bearer <JWT>
+```  
+
+__3.__ Test protected routes
+
+
 **👨‍💻 Author**
 
 Pankaj Kumar
