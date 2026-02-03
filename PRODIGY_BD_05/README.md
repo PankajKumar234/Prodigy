@@ -96,7 +96,7 @@ cd PRODIGY_BD_05
 **2️⃣ Create virtual environment**
 ```
 python -m venv venv
-venv\Scripts\activate   # Windows
+venv\Scripts\activate   #Windows
 ```
 
 **3️⃣ Install dependencies**
@@ -196,8 +196,7 @@ Task 05: Hotel Booking Platform Backend API
 
 **🔐 Authentication**
 
-**Register User**
-
+**Register User**  
 __POST__ `/auth/register`
 
 **Request Body**
@@ -217,8 +216,7 @@ __POST__ `/auth/register`
 }
 ```
 
-**Login User**
-
+**Login User**  
 __POST__ `/auth/login`
 
 **Request Body**
@@ -238,12 +236,9 @@ __POST__ `/auth/login`
 }
 ```
 
-**Get Logged-in User**
-
-__GET__ `/auth/me`
-
-
-**🔒 Requires JWT**
+**Get Logged-in User**  
+__GET__ `/auth/me`  
+🔒 Requires JWT
 
 **Headers**
 ```
@@ -252,11 +247,9 @@ Authorization: Bearer <JWT_TOKEN>
 
 **🏠 Rooms**
 
-**Create Room**
-
-__POST__ `/rooms`
-
-**🔒 Requires JWT**
+**Create Room**  
+__POST__ `/rooms`  
+🔒 Requires JWT
 
 **Request Body**
 
